@@ -1,5 +1,3 @@
-import { browser } from '$app/env';
-
 /* View in fullscreen */
 export function openFullscreen() {
 	/* Get the documentElement (<html>) to display the page in fullscreen */
