@@ -1,7 +1,10 @@
 <script>
   export let title = "";
-  document.title = title;
 </script>
+
+<svelte:head>
+  <title>{title}</title>
+</svelte:head>
 
 <div class="title">
   <div class="spacer" />
