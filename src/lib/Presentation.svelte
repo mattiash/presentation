@@ -5,6 +5,7 @@
   import { openFullscreen } from "./fullscreen.js";
   $: numSlides = parseInt(slides);
 
+  // BroadcastChannel does not work on Safari
   const chan = browser && new BroadcastChannel('svelte-deck')
   chan.onmessage = (event) => activeSlide.update(() => event.data)
 
@@ -32,10 +33,10 @@
       openFullscreen()
     }
     else {
-      return true
+      return
     }
 
-    return false
+    event.preventDefault()
   }
 
   overview.subscribe(v => {
@@ -55,10 +56,10 @@
   });
 
   activeSlide.subscribe( v => {
-    chan && chan.postMessage(v)
+    // chan && chan.postMessage(v)
   });
 
 </script>
 
-<svelte:window on:keydown|preventDefault={handleKeydown} />
+<svelte:window on:keydown={handleKeydown} />
 <slot />

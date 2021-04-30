@@ -45,4 +45,20 @@
 			}
 		}
 	}
+
+	.slide {
+		@apply w-screen h-screen flex flex-col justify-between;
+
+		& h3 {
+			@apply text-center font-serif font-bold text-7xl text-blue-600 mt-8;
+		}
+
+		& p {
+			@apply mx-16 font-sans text-6xl;
+		}
+
+		& ul {
+			@apply list-disc list-outside ml-32 mr-16 font-sans text-6xl;
+		}
+	}
 }
