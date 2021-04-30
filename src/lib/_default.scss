@@ -1,0 +1,18 @@
+div.slide {
+    background-image: linear-gradient(#e5e5e5 0%, #f0f0f0 16%, #ffffff 100%);
+}
+
+div.title {
+    background: linear-gradient(90deg, $primary1 50%, $primary2);
+    color: white;
+}
+
+div.section.blue {
+    background-color: $primary1_light;
+    color: $primary1;
+}
+
+div.section.green {
+    background-color: $primary2_light;
+    color: $primary2;
+}
