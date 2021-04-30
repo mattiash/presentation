@@ -3,11 +3,18 @@
   export let slides;
   import { activeSlide, overview, comment, animate } from "./stores.js";
   import { openFullscreen } from "./fullscreen.js";
+  import {onMount} from 'svelte'
+
   $: numSlides = parseInt(slides);
 
   // BroadcastChannel does not work on Safari
-  const chan = browser && new BroadcastChannel('svelte-deck')
-  chan.onmessage = (event) => activeSlide.update(() => event.data)
+  let chan
+  
+  onMount( () => {
+    console.log('onMount')
+    chan = new BroadcastChannel('svelte-deck')
+    chan.onmessage = (event) => activeSlide.update(() => event.data)
+  })
 
   function handleKeydown(event) {
     if (event.key === "ArrowRight") {
@@ -56,7 +63,7 @@
   });
 
   activeSlide.subscribe( v => {
-    // chan && chan.postMessage(v)
+    chan && chan.postMessage(v)
   });
 
 </script>
