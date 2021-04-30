@@ -5,19 +5,19 @@
 
 @layer base {
 	div.slide-container {
-		@apply fixed bg-red-200 w-screen h-screen border-2;
+		@apply fixed w-screen h-screen border-2;
 		@apply duration-500 transition transform-gpu;
-	}
 
-	div.slide-container.visible {
-		@apply translate-x-0;
-	}
+		&.visible {
+			@apply translate-x-0;
+		}
 
-	div.slide-container.left {
-		@apply -translate-x-full;
-	}
+		&.left {
+			@apply -translate-x-full;
+		}
 
-	div.slide-container.right {
-		@apply translate-x-full;
+		&.right {
+			@apply translate-x-full;
+		}
 	}
 }
