@@ -1,10 +1,9 @@
 import { browser } from '$app/env';
 
-/* Get the documentElement (<html>) to display the page in fullscreen */
-const elem = browser && document.documentElement;
-
 /* View in fullscreen */
 export function openFullscreen() {
+	/* Get the documentElement (<html>) to display the page in fullscreen */
+	const elem = document.documentElement;
 	if (elem.requestFullscreen) {
 		elem.requestFullscreen();
 	} else if (elem.mozRequestFullScreen) {

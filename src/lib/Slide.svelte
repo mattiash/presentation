@@ -10,8 +10,8 @@
   $: {
     num = parseInt(n);
     const f = 111.111
-    translateX = [-f, 0, f][(num - 1) % 3];
-    translateY = -f + f * Math.floor((num - 1) / 3) - 3*f * (num - 1);
+    translateX = 11.111/2 + [0, f, 2*f][(num - 1) % 3];
+    translateY = 11.111 + f * Math.floor((num - 1) / 3);
     transform = `scale(0.3) translate(${translateX}%, ${translateY}%)`;
   }
 
@@ -35,6 +35,9 @@
 </script>
 
 <style>
+  .slide-container {
+    transform-origin: left top;
+  }
 </style>
 
 <div
