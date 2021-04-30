@@ -18,6 +18,17 @@
 		&.right {
 			@apply translate-x-full;
 		}
+
+		& p.comment {
+			@apply hidden;
+		}
+	}
+
+	.overview div.slide-container {
+		@apply border-4 border-gray-400 rounded-2xl;
+		&.selected {
+			@apply border-8;
+		}
 	}
 
 	body.comment {
@@ -25,8 +36,12 @@
 			& * {
 				@apply hidden;
 			}
+
+			justify-content: normal;
+			align-items: start;
+
 			& p.comment {
-				@apply block;
+				@apply block m-2;
 			}
 		}
 	}
