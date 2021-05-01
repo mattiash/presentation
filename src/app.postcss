@@ -50,7 +50,7 @@
 		@apply w-screen h-screen flex flex-col justify-between;
 
 		& h3 {
-			@apply text-center font-serif font-bold text-7xl text-blue-600 mt-8;
+			@apply text-center font-sans font-bold text-7xl text-blue-800 mt-8;
 		}
 
 		& p {
@@ -67,6 +67,29 @@
 
 		& div.image:first-child {
 			@apply border-none;
+		}
+
+		& div.title {
+			@apply flex flex-col justify-between h-full;
+
+			/* Presentation title */
+			& h1 {
+				@apply text-blue-800 h-1/2 order-3 mx-2 text-9xl font-bold;
+			}
+
+			/* Author */
+			& :nth-child(3) {
+				@apply text-blue-400 order-2 flex-grow-0 mx-2 text-4xl;
+			}
+
+			/* Date */
+			& :nth-child(4) {
+				@apply text-blue-400 absolute bottom-0 left-0 mx-2 text-4xl;
+			}
+
+			& .spacer:first-child {
+				@apply flex-grow;
+			}
 		}
 	}
 }
