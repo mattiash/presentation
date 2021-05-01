@@ -1,0 +1,1 @@
+Place images here and reference them as `images/image.png`
