@@ -4,8 +4,11 @@
 @tailwind utilities;
 
 @layer base {
+	body {
+		@apply overflow-x-hidden;
+	}
 	div.slide-container {
-		@apply absolute w-screen h-screen border-2;
+		@apply absolute w-screen h-screen border-2 overflow-hidden;
 		@apply duration-500 transition transform-gpu;
 
 		&.visible {
@@ -89,6 +92,22 @@
 
 			& .spacer:first-child {
 				@apply flex-grow;
+			}
+		}
+
+		& div.section {
+			@apply h-full w-full;
+
+			& div {
+				@apply h-full;
+			}
+
+			& .d3 {
+				@apply flex flex-col justify-center;
+			}
+
+			& h2 {
+				@apply text-red-600 align-middle text-9xl font-bold pt-20 px-2;
 			}
 		}
 	}
