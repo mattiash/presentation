@@ -6,7 +6,7 @@ npx degit @mattiash/svelte-deck my-presentation
 npm install
 npm run dev
 
-Now edit src/index.md
+Now edit src/routes/index.md
 
 ## Generate pdf
 
