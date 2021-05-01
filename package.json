@@ -1,12 +1,14 @@
 {
-  "name": "~TODO~",
+  "name": "svelte-kit-presentation",
   "version": "0.0.1",
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
     "preview": "svelte-kit preview",
     "lint": "prettier --check . && eslint --ignore-path .gitignore .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "drawio": "rm -f static/drawio/*.svg; drawio-export -f svg -o static/drawio/ ./$npm_package_name.drawio",
+    "drawio-watch": "drawio-export -f svg -o static/drawio/ --watch ./$npm_package_name.drawio"
   },
   "devDependencies": {
     "@sveltejs/kit": "next",
@@ -31,6 +33,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@mattiash/drawio-export": "^1.0.0",
     "puppeteer": "^9.0.0",
     "svelte-preprocess-markdown": "^2.7.3"
   }
