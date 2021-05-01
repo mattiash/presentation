@@ -4,24 +4,29 @@
 @tailwind utilities;
 
 @layer base {
+	@media print {
+	}
 	body {
 		@apply overflow-x-hidden;
 	}
 
 	div.slide-container {
-		@apply absolute w-screen h-screen overflow-hidden;
+		@apply screen:absolute screen:w-screen screen:h-screen screen:overflow-hidden;
 		@apply transition transform-gpu;
 		transition-duration: 0s;
 
+		@apply print:h-screen;
+
 		&.visible {
-			@apply translate-x-0;
+			@apply screen:translate-x-0;
 		}
+
 		&.left {
-			@apply -translate-x-full;
+			@apply screen:-translate-x-full;
 		}
 
 		&.right {
-			@apply translate-x-full;
+			@apply screen:translate-x-full;
 		}
 
 		& p.comment {
@@ -56,7 +61,7 @@
 	}
 
 	.slide {
-		@apply w-screen h-screen flex flex-col justify-between;
+		@apply screen:w-screen screen:h-screen print:h-full print:w-full flex flex-col justify-between;
 
 		& h3 {
 			@apply text-center font-sans font-bold text-7xl text-blue-800 mt-8;
