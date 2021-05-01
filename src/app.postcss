@@ -60,5 +60,13 @@
 		& ul {
 			@apply list-disc list-outside ml-32 mr-16 font-sans text-6xl;
 		}
+
+		& div.image {
+			@apply object-contain w-full h-full bg-center bg-no-repeat bg-contain border-8 border-transparent;
+		}
+
+		& div.image:first-child {
+			@apply border-none;
+		}
 	}
 }

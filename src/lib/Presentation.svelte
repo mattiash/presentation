@@ -11,7 +11,6 @@
   let chan
   
   onMount( () => {
-    console.log('onMount')
     chan = new BroadcastChannel('svelte-deck')
     chan.onmessage = (event) => activeSlide.update(() => event.data)
   })
