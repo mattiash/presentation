@@ -7,9 +7,11 @@
 	body {
 		@apply overflow-x-hidden;
 	}
+
 	div.slide-container {
 		@apply absolute w-screen h-screen overflow-hidden;
-		@apply duration-500 transition transform-gpu;
+		@apply transition transform-gpu;
+		transition-duration: 0s;
 
 		&.visible {
 			@apply translate-x-0;
@@ -25,6 +27,10 @@
 		& p.comment {
 			@apply hidden;
 		}
+	}
+
+	div.slide-container.animate {
+		transition-duration: 0.5s;
 	}
 
 	.overview div.slide-container {
