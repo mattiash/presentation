@@ -8,7 +8,7 @@ module.exports = {
 	extensions: ['.svelte', '.md'],
 	preprocess: [
 		mdsvDeck(),
-		logger(),
+		// logger(),
 		preprocess({
 			postcss: true
 		})

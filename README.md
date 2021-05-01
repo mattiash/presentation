@@ -1,4 +1,4 @@
-# svelte-deck
+# presentation template
 
 ## Usage
 
@@ -11,6 +11,15 @@ Now edit src/routes/index.md
 ## Generate pdf
 
 With `npm run dev` running, run `node util/print.js`
+
+## Images
+
+Place images in `static/images`. Reference them as `images/...`.
+
+## Drawio
+
+Run `npm run drawio-watch` to generate svgs from each tab in a file named `$npm_package_name.drawio`.
+The images can be referenced as `drawio/(name of tab).svg`.
 
 ## Keyboard
 

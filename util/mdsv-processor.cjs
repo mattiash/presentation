@@ -67,11 +67,9 @@ function logger(prefix) {
 }
 
 function mdsvDeck() {
-	console.log('Creating mdsvDeck');
 	const md = markdown({ renderer });
 	return {
 		markup: ({ content, filename }) => {
-			console.log('Running markup()', filename);
 			if (filename.endsWith('.md')) {
 				slide = 2;
 				const mdresult = md.markup({ content, filename });
