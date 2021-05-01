@@ -61,18 +61,22 @@
 	}
 
 	.slide {
-		@apply screen:w-screen screen:h-screen print:h-full print:w-full flex flex-col justify-between;
+		@apply screen:w-screen screen:h-screen print:h-full print:w-full flex flex-col justify-between text-gray-800;
 
 		& h3 {
 			@apply text-center font-sans font-bold text-7xl text-blue-800 mt-8;
 		}
 
 		& p {
-			@apply mx-16 font-sans text-6xl;
+			@apply mx-16 font-sans text-6xl leading-tight;
 		}
 
 		& ul {
 			@apply list-disc list-outside ml-32 mr-16 font-sans text-6xl;
+		}
+
+		& ul li {
+			@apply my-2;
 		}
 
 		& div.image {
@@ -81,6 +85,10 @@
 
 		& div.image:first-child {
 			@apply border-none;
+		}
+
+		& blockquote p {
+			@apply text-center italic text-gray-600 leading-snug;
 		}
 
 		& div.title {
