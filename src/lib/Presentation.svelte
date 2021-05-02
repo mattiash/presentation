@@ -1,7 +1,7 @@
 <script>
   import { browser } from '$app/env'
   export let slides;
-  import { activeSlide, overview, comment, animate } from "./stores.js";
+  import { activeSlide, overview, comment, animate, initHashUpdate } from "./stores.js";
   import { openFullscreen } from "./fullscreen.js";
   import {onMount} from 'svelte'
 
@@ -13,6 +13,11 @@
   onMount( () => {
     chan = new BroadcastChannel('svelte-deck')
     chan.onmessage = (event) => activeSlide.update(() => event.data)
+    const [initSlide, initComment] = window.location.hash.substr(1).split(',');
+    activeSlide.update( () => parseInt(initSlide) || 1)
+    comment.update( () => initComment === 'true')
+    initHashUpdate()
+
   })
 
   function handleKeydown(event) {
