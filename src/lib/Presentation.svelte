@@ -29,6 +29,10 @@
       activeSlide.update(n => Math.min(n + 3, numSlides));
     } else if ($overview && event.key === "ArrowUp") {
       activeSlide.update(n => Math.max(1, n - 3));
+    } else if (event.key === "Home") {
+      activeSlide.update(n => 1);
+    } else if (event.key === "End") {
+      activeSlide.update(n => numSlides);
     } else if (event.key === "o") {
       overview.update(v => !v);
     } else if ($overview && event.key === "Enter") {

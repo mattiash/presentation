@@ -25,6 +25,7 @@ The images can be referenced as `drawio/(name of tab).svg`.
 
 - f - Enter fullscreen
 - Arrow left / right - Previous / Next slide
+- Home / End - First / Last slide
 - o - Overview mode
 - c - Toggle Comments (Speaker notes)
 - a - Toggle animations (slide transitions) on/off
