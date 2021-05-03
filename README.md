@@ -2,7 +2,7 @@
 
 ## Usage
 
-npx degit @mattiash/svelte-deck my-presentation
+npx degit @mattiash/presentation my-presentation
 npm install
 npm run dev
 
@@ -10,7 +10,9 @@ Now edit src/routes/index.md
 
 ## Generate pdf
 
-With `npm run dev` running, run `node util/print.js`
+With `npm run dev` running, run `node util/print.js`.
+Or simply print the presentation from the browser,
+but remember to print backgrounds but not header/footer.
 
 ## Images
 
