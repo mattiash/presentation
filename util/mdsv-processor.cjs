@@ -11,6 +11,10 @@ import Section from "$lib/Section.svelte";
 
 let slide = 0;
 
+// Wrap tables in an extra div to avoid them
+// using full page width.
+const tableRenderer = renderer.table;
+renderer.table = (head, body) => '<div class="table">' + tableRenderer(head, body) + '</div>';
 renderer.hr = () => `</Slide>\n<Slide n="${slide++}">`;
 renderer.image = (href, title, text) => `<Image href="${href}"></Image>`;
 renderer.heading = (text, number) => {
