@@ -1,14 +1,14 @@
-const preprocess = require('svelte-preprocess');
-const { logger, mdsvDeck } = require('./util/mdsv-processor.cjs');
+import preprocess from 'svelte-preprocess';
+import { logger, mdsvDeck } from './util/mdsv-processor.cjs';
 
 /** @type {import('@sveltejs/kit').Config} */
-module.exports = {
+const config = {
 	// Consult https://github.com/sveltejs/svelte-preprocess
 	// for more information about preprocessors
 	extensions: ['.svelte', '.md'],
 	preprocess: [
 		mdsvDeck(),
-		// logger(),
+		logger(),
 		preprocess({
 			postcss: true
 		})
@@ -20,3 +20,5 @@ module.exports = {
 		// ssr: false
 	}
 };
+
+export default config;
