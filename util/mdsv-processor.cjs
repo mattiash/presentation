@@ -16,7 +16,7 @@ let slide = 0;
 const tableRenderer = renderer.table;
 renderer.table = (head, body) => '<div class="table">' + tableRenderer(head, body) + '</div>';
 renderer.hr = () => `</Slide>\n<Slide n="${slide++}">`;
-renderer.image = (href, title, text) => `<Image href="${href}"></Image>`;
+renderer.image = (href, title, text) => `<Image href="${href}" text="${text}"></Image>`;
 renderer.heading = (text, number) => {
 	switch (number) {
 		case 1:
