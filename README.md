@@ -18,6 +18,13 @@ but remember to print backgrounds but not header/footer.
 
 Place images in `static/images`. Reference them as `images/...`.
 
+By default, images take up all available space.
+To make images smaller, add a class s-1/2, s-1/3, s-1/4 as the text for the image:
+
+```
+![s-1/2](images/test.png)
+```
+
 ## Drawio
 
 Run `npm run drawio-watch` to generate svgs from each tab in a file named `$npm_package_name.drawio`.
