@@ -13,8 +13,16 @@ let slide = 0;
 
 // Wrap tables in an extra div to avoid them
 // using full page width.
-const tableRenderer = renderer.table;
-renderer.table = (head, body) => '<div class="table">' + tableRenderer(head, body) + '</div>';
+renderer.tableOrg = renderer.table;
+renderer.table = (head, body) => '<div class="table">' + renderer.tableOrg(head, body) + '</div>';
+
+// Wrap code in {`...`} to avoid svelte trying to parse it as code
+renderer.codeOrg = renderer.code;
+renderer.code = (code, infostring, escaped) => {
+	const org = renderer.codeOrg(code, infostring, escaped);
+	// Log org here if you ever want to change this...
+	return org.replace('<code>', '<code>{`').replace('</code>', '`}</code>');
+};
 renderer.hr = () => `</Slide>\n<Slide n="${slide++}">`;
 renderer.image = (href, title, text) => `<Image href="${href}" text="${text}"></Image>`;
 renderer.heading = (text, number) => {
