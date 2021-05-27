@@ -16,7 +16,7 @@
 		@apply transition transform-gpu;
 		transition-duration: 0s;
 
-		@apply print:h-screen;
+		@apply print:h-screen border-2 print:overflow-hidden;
 
 		&.visible {
 			@apply screen:translate-x-0;
@@ -65,15 +65,15 @@
 		@apply screen:w-screen screen:h-screen print:h-full print:w-full flex flex-col justify-between text-gray-800;
 
 		& h3 {
-			@apply text-center font-sans font-bold text-7xl text-blue-800 mt-8;
+			@apply text-center font-sans font-bold text-7xl print:text-6xl text-blue-800 mt-8;
 		}
 
 		& p {
-			@apply mx-16 font-sans text-6xl leading-tight;
+			@apply mx-16 font-sans text-6xl leading-tight print:text-4xl;
 		}
 
 		& ul {
-			@apply list-disc list-outside ml-32 mr-16 font-sans text-6xl;
+			@apply list-disc list-outside ml-32 mr-16 font-sans text-6xl print:text-2xl;
 		}
 
 		& ul li {
@@ -81,7 +81,7 @@
 		}
 
 		& ol {
-			@apply list-decimal list-outside ml-32 mr-16 font-sans text-6xl;
+			@apply list-decimal list-outside ml-32 mr-16 font-sans text-6xl print:text-2xl;
 		}
 
 		& ol li {
@@ -114,7 +114,7 @@
 		}
 
 		& pre {
-			@apply font-mono flex flex-col place-items-center text-2xl;
+			@apply font-mono flex flex-col place-items-center text-2xl print:text-xl;
 		}
 
 		& div.title {
@@ -122,7 +122,7 @@
 
 			/* Presentation title */
 			& h1 {
-				@apply text-blue-800 h-1/2 order-3 mx-2 text-9xl font-bold;
+				@apply text-blue-800 h-1/2 order-3 mx-2 text-9xl font-bold print:text-7xl;
 			}
 
 			/* Author */
@@ -152,7 +152,7 @@
 			}
 
 			& h2 {
-				@apply text-red-600 align-middle text-9xl font-bold pt-20 px-8;
+				@apply text-red-600 align-middle text-9xl print:text-7xl font-bold pt-20 px-8;
 			}
 		}
 
