@@ -6,6 +6,7 @@
 @layer base {
 	@media print {
 	}
+
 	body {
 		@apply overflow-x-hidden;
 	}
@@ -112,6 +113,10 @@
 			@apply text-center italic text-gray-600 leading-snug;
 		}
 
+		& pre {
+			@apply font-mono flex flex-col place-items-center text-2xl;
+		}
+
 		& div.title {
 			@apply flex flex-col justify-between h-full;
 
@@ -147,7 +152,7 @@
 			}
 
 			& h2 {
-				@apply text-red-600 align-middle text-9xl font-bold pt-20 px-2;
+				@apply text-red-600 align-middle text-9xl font-bold pt-20 px-8;
 			}
 		}
 
